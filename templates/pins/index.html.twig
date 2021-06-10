@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome!</title>
+    </head>
+    <body>
+        <h1>Hello world</h1>
+
+        <p><a href="{{ path('app_pins_create') }}">Créer un pin</a></p>
+
+        {% for pin in pins %}
+            <article>
+                <h1>{{ pin.title }}</h1>
+                <p>{{ pin.description }}</p>
+                <p><a href="{{ path('app_pins_show', {'id': pin.id}) }}">Voir !</a></p>
+            </article>
+        {% else %}
+            <p>Sorry ! No pins yet !</p>
+        {% endfor %}
+        
+    </body>
+</html>
